@@ -6,6 +6,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="ActivityObject.cs" t="Include" />
+          <e p="FakeCharCont.cs" t="Include" />
           <e p="InstantiateGrass.cs" t="Include" />
           <e p="Inventory" t="Include">
             <e p="CloseInventory.cs" t="Include" />

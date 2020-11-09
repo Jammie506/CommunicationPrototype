@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SpotlightInteract : MonoBehaviour
 {
     public Text interact;
+    public bool interactBool;
     void Start()
     {
         interact.gameObject.SetActive(false);
@@ -22,6 +23,11 @@ public class SpotlightInteract : MonoBehaviour
         {
             interact.gameObject.SetActive(true);
             Debug.Log("collide");
+            interactBool = true;
+        }
+        else
+        {
+            interactBool = false;
         }
     }
 }
