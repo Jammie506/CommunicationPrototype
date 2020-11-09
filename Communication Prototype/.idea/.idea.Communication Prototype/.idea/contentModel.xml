@@ -4,9 +4,9 @@
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="InstantiateGrass.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="ActivityObject.cs" t="Include" />
+          <e p="InstantiateGrass.cs" t="Include" />
           <e p="Inventory" t="Include">
             <e p="CloseInventory.cs" t="Include" />
             <e p="DragDrop.cs" t="Include" />
@@ -17,8 +17,9 @@
             <e p="MouseLook.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
           </e>
+          <e p="SpotlightInteract.cs" t="Include" />
+          <e p="UIInteraction.cs" t="Include" />
         </e>
-        <e p="UIInteraction.cs" t="Include" />
       </e>
       <e p="Communication Prototype.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
