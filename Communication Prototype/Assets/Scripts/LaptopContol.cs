@@ -12,6 +12,8 @@ public class LaptopContol : MonoBehaviour
 
     public Button back;
 
+    public Image cipher;
+
     public void Start()
     {
         resources.gameObject.SetActive(true);
@@ -19,15 +21,39 @@ public class LaptopContol : MonoBehaviour
         messages.gameObject.SetActive(true);
         
         back.gameObject.SetActive(false);
+        
+        cipher.gameObject.SetActive(false);
     }
 
-    public void ButtonClicked()
+    public void ResourcesClicked()
     {
         resources.gameObject.SetActive(false);
         map.gameObject.SetActive(false);
         messages.gameObject.SetActive(false);
         
         back.gameObject.SetActive(true);
+        
+        cipher.gameObject.SetActive(true);
+    }
+
+    public void MapClicked()
+    {
+        resources.gameObject.SetActive(false);
+        map.gameObject.SetActive(false);
+        messages.gameObject.SetActive(false);
+        
+        back.gameObject.SetActive(true);
+        
+    }
+    
+    public void MessagesClicked()
+    {
+        resources.gameObject.SetActive(false);
+        map.gameObject.SetActive(false);
+        messages.gameObject.SetActive(false);
+        
+        back.gameObject.SetActive(true);
+        
     }
 
     public void BackClicked()
@@ -37,5 +63,7 @@ public class LaptopContol : MonoBehaviour
         messages.gameObject.SetActive(true);
         
         back.gameObject.SetActive(false);
+        
+        cipher.gameObject.SetActive(false);
     }
 }
