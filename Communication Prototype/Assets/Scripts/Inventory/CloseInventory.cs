@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CloseInventory : MonoBehaviour
 {
-    public GameObject ground;
 
     public GameObject player;
     private GameObject playerCamera;
@@ -13,6 +12,9 @@ public class CloseInventory : MonoBehaviour
 
     public GameObject activityObject;
     private ActivityObject playerActivity;
+
+
+
     private void OnEnable()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -20,15 +22,14 @@ public class CloseInventory : MonoBehaviour
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera");
         cameraMovement = playerCamera.GetComponent<MouseLook>();
 
-        activityObject = GameObject.Find("ActivityObject");
-        ground = GameObject.FindGameObjectWithTag("Ground");
+        activityObject = GameObject.FindGameObjectWithTag("ActivityObject");
+        playerActivity = activityObject.GetComponent<ActivityObject>();
 
     }
+
     public void ShutInventory()
     {
-        ground.layer = 0;
-
-        movementScript.enabled = true;
+        movementScript.speed = ActivityObject.resetSpeed;
         cameraMovement.enabled = true;
 
         playerActivity.uiPanel.SetActive(false);

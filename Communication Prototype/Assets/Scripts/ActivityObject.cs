@@ -19,7 +19,8 @@ public class ActivityObject : MonoBehaviour
     private DragDrop dragDrop;
     public GameObject uiPanel;
 
-    public Quaternion quat;
+
+    public static float resetSpeed;
     private void OnEnable()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -32,32 +33,19 @@ public class ActivityObject : MonoBehaviour
         ground = GameObject.FindGameObjectWithTag("Ground");
 
     }
+    private void Start()
+    {
+        resetSpeed = movementScript.speed;
+    }
     void Update()
     {
-       /* ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit))
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                print(hit.collider.name);
-                if (hit.collider == boxCollider)
-                {
-                    movementScript.enabled = false;
-                    cameraMovement.enabled = false;
-                    ground.layer = 2;
-                    uiPanel.SetActive(true);
-                }
-                if (hit.collider != boxCollider)
-                {
-                    movementScript.enabled = true;
-                    cameraMovement.enabled = true;
-                }
 
-            }
-        }*/
-        if(Input.GetKey(KeyCode.I))
+        if (Input.GetKey(KeyCode.I))
         {
+            movementScript.speed = 0f;
+            cameraMovement.enabled = false;
             uiPanel.SetActive(true);
+            Debug.Log("hi");
         }
     }
 }
