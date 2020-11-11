@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 492}
   m_MaxSize: {x: 10000, y: 10000}
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_MinSize: {x: 910, y: 442}
   m_MaxSize: {x: 22005, y: 10021}
   vertical: 0
-  controlID: 41
+  controlID: 130
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 102
+  controlID: 131
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -405,9 +405,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 157.52391, y: -2.3785214, z: 367.94894}
+    m_Target: {x: 0.6984121, y: 33.988716, z: -37.395355}
     speed: 2
-    m_Value: {x: 157.52391, y: -2.3785214, z: 367.94894}
+    m_Value: {x: 0.6984121, y: 33.988716, z: -37.395355}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -454,13 +454,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.0015933213, y: -0.9985395, z: 0.048261695, w: 0.025957335}
+    m_Target: {x: 0.25090826, y: 0.036413074, z: -0.009779207, w: 0.9673222}
     speed: 2
-    m_Value: {x: 0.0015932524, y: -0.9984963, z: 0.048259605, w: 0.025956212}
+    m_Value: {x: 0.25234777, y: 0.03639675, z: -0.00983339, w: 0.9669019}
   m_Size:
-    m_Target: 44.4127
+    m_Target: 4.526341
     speed: 2
-    m_Value: 44.4127
+    m_Value: 4.226341
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -513,20 +513,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 164b0000
-      m_LastClickedID: 19222
-      m_ExpandedIDs: 4679eaffb679eaff60fbffff6a370000c0370000c83700006038000070380000304a0000764a0000864a00008e4a0000264b0000364b0000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: acc9b5ff26cab5ff1658bfff2a58bfff7458bfff60fbffff6a370000ba370000c8370000023800006038000070380000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Torch
-        m_OriginalName: Torch
+        m_Name: Torch(Clone)
+        m_OriginalName: Torch(Clone)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 23292
+        m_UserData: -3295638
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -589,8 +589,8 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0a3a0000
-    m_LastClickedID: 14858
+    m_SelectedIDs: 0e3a0000
+    m_LastClickedID: 14862
     m_ExpandedIDs: 00000000fe39000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0

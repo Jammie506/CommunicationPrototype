@@ -1675,6 +1675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   torchPrefab: {fileID: 2397756274334287266, guid: 4d5bcd4c176da9040848ffd389c7df10, type: 3}
   target: {fileID: 465153606}
+  firstAmount: 0
 --- !u!1 &1082307701
 GameObject:
   m_ObjectHideFlags: 0
@@ -6747,6 +6748,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
+  targetPosition: {fileID: 465153607}
   uiInventory: {fileID: 201267184}
 --- !u!143 &1275196321
 CharacterController:
