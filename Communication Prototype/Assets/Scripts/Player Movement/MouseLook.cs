@@ -8,10 +8,12 @@ public class MouseLook : MonoBehaviour
 
     public Transform playerBody;
 
+    public GameObject armPrefab;
+
     private float xRotation = 0f;
     void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
@@ -22,8 +24,8 @@ public class MouseLook : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        armPrefab.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
      
     }

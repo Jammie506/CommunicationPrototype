@@ -33,5 +33,6 @@ public class CloseInventory : MonoBehaviour
         cameraMovement.enabled = true;
 
         playerActivity.uiPanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

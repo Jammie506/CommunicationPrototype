@@ -13,9 +13,35 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+
     Vector3 velocity;
     private bool isGrounded;
 
+    private Inventory inventory;
+
+    [SerializeField] private UI_Inventory uiInventory;
+
+
+    private void Awake()
+    {
+        inventory = new Inventory();
+        uiInventory.SetInventory(inventory);
+
+        ItemWorld.SpawnItemWorld(new Vector3(Random.Range(-15, 15), 0.25f, Random.Range(-16,16)), new Item { itemType = Item.ItemType.Torch, amount = 1 });
+        ItemWorld.SpawnItemWorld(new Vector3(Random.Range(-15, 15), 0.5f, Random.Range(-16, 16)), new Item { itemType = Item.ItemType.Key, amount = 1 });
+        ItemWorld.SpawnItemWorld(new Vector3(Random.Range(-15, 15), 0.5f, Random.Range(-16, 16)), new Item { itemType = Item.ItemType.Note, amount = 1 });
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        ItemWorld itemWorld = collision.GetComponent<ItemWorld>();
+        if(itemWorld != null)
+        {
+            //If the colliding object contains Items world script
+            inventory.AddItem(itemWorld.GetItem());
+            itemWorld.DestroySelf();
+        }
+    }
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); 

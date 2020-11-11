@@ -8,6 +8,10 @@ TagManager:
   - UIPanel
   - ActivityObject
   - Player2
+  - Torch
+  - itemSlotTemplate
+  - Image
+  - TorchPrefab
   layers:
   - Default
   - TransparentFX
