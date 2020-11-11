@@ -16,7 +16,7 @@ public class ItemAssets : MonoBehaviour
         Instance = this;
     }
 
-    public Transform[] pfItemWorld = new Transform[3];
+    public GameObject[] pfItemWorld = new GameObject[3];
 
     public Sprite torchSprite;
     public Sprite lanternSprite;

@@ -7,7 +7,8 @@ public class ItemWorld : MonoBehaviour
 
     public static ItemWorld SpawnItemWorld(Vector3 position, Item item)
     {
-        Transform transform;
+        GameObject transform;
+
         switch (item.itemType)
         {
             default:
@@ -22,17 +23,17 @@ public class ItemWorld : MonoBehaviour
                 break;
         }
         ItemWorld itemWorld = transform.GetComponent<ItemWorld>();
-        itemWorld.SetItem(item);
 
+        itemWorld.SetItem(item);
         return itemWorld;
     }
     private Item item;
-    private SpriteRenderer spriteRenderer;
+   /* private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+    }*/
     public void SetItem(Item item)
     {
         this.item = item;

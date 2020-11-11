@@ -13,8 +13,6 @@ public class Inventory
     {
         itemList = new List<Item>();
 
-
-
     }
 
     public void AddItem(Item item)

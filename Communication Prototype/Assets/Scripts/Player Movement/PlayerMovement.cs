@@ -27,11 +27,14 @@ public class PlayerMovement : MonoBehaviour
         inventory = new Inventory();
         uiInventory.SetInventory(inventory);
 
-        ItemWorld.SpawnItemWorld(new Vector3(Random.Range(-15, 15), 0.25f, Random.Range(-16,16)), new Item { itemType = Item.ItemType.Torch, amount = 1 });
+    }
+    private void Start()
+    {
+
+        ItemWorld.SpawnItemWorld(new Vector3(Random.Range(-15, 15), 0.25f, Random.Range(-16, 16)), new Item { itemType = Item.ItemType.Torch, amount = 1 });
         ItemWorld.SpawnItemWorld(new Vector3(Random.Range(-15, 15), 0.5f, Random.Range(-16, 16)), new Item { itemType = Item.ItemType.Key, amount = 1 });
         ItemWorld.SpawnItemWorld(new Vector3(Random.Range(-15, 15), 0.5f, Random.Range(-16, 16)), new Item { itemType = Item.ItemType.Note, amount = 1 });
     }
-
     private void OnTriggerEnter(Collider collision)
     {
         ItemWorld itemWorld = collision.GetComponent<ItemWorld>();

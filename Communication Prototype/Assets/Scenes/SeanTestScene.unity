@@ -12317,9 +12317,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pfItemWorld:
-  - {fileID: 3030177132800679704, guid: 4d5bcd4c176da9040848ffd389c7df10, type: 3}
-  - {fileID: 8510823599441743013, guid: 918e0d55fe225134e89cfb2334e7e2a5, type: 3}
-  - {fileID: 6461387258063302491, guid: 5bd36c902f79e7f46a33d536fce62544, type: 3}
+  - {fileID: 2397756274334287266, guid: 4d5bcd4c176da9040848ffd389c7df10, type: 3}
+  - {fileID: 9031780298342061599, guid: 918e0d55fe225134e89cfb2334e7e2a5, type: 3}
+  - {fileID: 2927404633469310056, guid: 5bd36c902f79e7f46a33d536fce62544, type: 3}
   torchSprite: {fileID: 21300000, guid: 3881547239656a24f883d03a15343fd5, type: 3}
   lanternSprite: {fileID: 21300000, guid: da3d5c21fe4eb0e498fd106b5af0d1f7, type: 3}
   randomSprite: {fileID: 21300000, guid: 7fd735f62f395402c8dfb849a1f80eab, type: 3}
