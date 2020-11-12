@@ -40,7 +40,7 @@ public class HeartBeatController : MonoBehaviour
         {
             heartBeatControl(3);
         }
-        if (distance.magnitude > 85 && distance.magnitude < 200)
+        if (distance.magnitude > 85)
         {
             heartBeatControl(4);
         }

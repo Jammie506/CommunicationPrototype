@@ -69,11 +69,11 @@ public class UI_Inventory : MonoBehaviour
                 //Drop Item
                 inventory.RemoveItem(item);
                 ItemWorld.DropItem(player.targetPosition.transform, item);
-                if(item.itemType == Item.ItemType.Torch)
-                {
-                    rightClick = true;
-                    PlayerMovement.amount = 0;
-                }
+
+                rightClick = true;
+                PlayerMovement.resumeTimer = true;
+                PlayerMovement.torchIsStillAlive = false;
+                player.targetPosition.tag = "Untagged";
             };
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y);
             Image image = itemSlotRectTransform.Find("Image").GetComponent<Image>();

@@ -37,57 +37,113 @@ public class PlayerMovement : MonoBehaviour
         uiInventory.SetPlayer(this);
 
     }
+
+    public float timer = 30;
+    public float resetTime;
+    public static bool resumeTimer;
     private void Start()
     {
         ItemAssets.Instance.pfItemWorld[0].GetComponent<BoxCollider>().enabled = true;
 
-
-        //CreateGrass(1, Vector3.zero, 10);
-      
+        resetTime = timer;
     }
 
     public void GetPosition()
     {
         Vector3 playerPos = player.transform.position;
     }
-   
+
     private void OnTriggerEnter(Collider collision)
     {
         ItemWorld itemWorld = collision.GetComponent<ItemWorld>();
         if (itemWorld != null)
         {
             //If the colliding object contains Items world script
+            resumeTimer = false;
             inventory.AddItem(itemWorld.GetItem());
             itemWorld.DestroySelf();
         }
     }
-    public static int amount = 0;
-    private GameObject objectTransform;
+    [HideInInspector] public Transform torch;
+    [HideInInspector] public Transform light;
+    [HideInInspector] public Transform firePS;
+
+    public static GameObject objectTransform;
+    public static  bool flameIsActive = false;
+    public static bool createNewFire = false;
     private void UseItem(Item item)
     {
         switch (item.itemType)
         {
             case Item.ItemType.Torch:
-                if(amount < 1)
+                Destroy(objectTransform);
+                objectTransform = Instantiate(ItemAssets.Instance.pfItemWorld[0], targetPosition.position, targetPosition.transform.rotation);
+                objectTransform.tag = "Untagged";
+                objectTransform.GetComponent<Rigidbody>().useGravity = false;
+                objectTransform.GetComponent<Rigidbody>().isKinematic = true;
+                objectTransform.GetComponent<BoxCollider>().isTrigger = false;
+                objectTransform.transform.parent = targetPosition.transform;
+                targetPosition.tag = "Torch";
+                torch = objectTransform.transform;
+                light = torch.Find("Torch Light");
+                firePS = torch.Find("Fire PS");
+                if(ActivateFlame.activateFlame)
                 {
-                    objectTransform = Instantiate(ItemAssets.Instance.pfItemWorld[0], targetPosition.position, targetPosition.transform.rotation);
-                    objectTransform.GetComponent<Rigidbody>().useGravity = false;
-                    objectTransform.GetComponent<Rigidbody>().isKinematic = true;
-                    objectTransform.GetComponent<BoxCollider>().isTrigger = false;
-                    objectTransform.transform.parent = targetPosition.transform;
-                    targetPosition.tag = "Torch";
-                    amount++;
-                   
+                    light.gameObject.SetActive(true);
+                    firePS.gameObject.SetActive(true);
+                    resumeTimer = true;
+                    flameIsActive = true;
+                    
                 }
                 break;
             case Item.ItemType.Key:
                 Debug.Log("Key");
+                resumeTimer = false;
+                Destroy(objectTransform);
+                objectTransform = Instantiate(ItemAssets.Instance.pfItemWorld[1], targetPosition.position, targetPosition.transform.rotation);
+                objectTransform.tag = "Untagged";
+                targetPosition.tag = "Untagged";
+                objectTransform.GetComponent<Rigidbody>().useGravity = false;
+                objectTransform.GetComponent<Rigidbody>().isKinematic = true;
+                objectTransform.GetComponent<BoxCollider>().isTrigger = false;
+                objectTransform.transform.parent = targetPosition.transform;
                 break;
             case Item.ItemType.Note:
+                resumeTimer = false;
+                Destroy(objectTransform);
+                objectTransform = Instantiate(ItemAssets.Instance.pfItemWorld[2], targetPosition.position, targetPosition.transform.rotation);
+                objectTransform.tag = "Untagged";
+                targetPosition.tag = "Untagged";
+                objectTransform.GetComponent<Rigidbody>().useGravity = false;
+                objectTransform.GetComponent<Rigidbody>().isKinematic = true;
+                objectTransform.GetComponent<BoxCollider>().isTrigger = false;
+                objectTransform.transform.parent = targetPosition.transform;
                 break;
         }
 
     }
+    public static bool torchIsStillAlive = true;
+    public void TimerControl()
+    {
+        if(resumeTimer)
+        {
+            timer -= Time.deltaTime;
+            if(timer <= 0)
+            {
+                if(torchIsStillAlive)
+                {
+                    light.gameObject.SetActive(false);
+                    firePS.gameObject.SetActive(false);
+                    flameIsActive = false;
+                }
+
+                resumeTimer = false;
+                ActivateFlame.activateFlame = false;
+                createNewFire = false;
+            }
+        }
+    }
+
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -118,5 +174,7 @@ public class PlayerMovement : MonoBehaviour
             Destroy(objectTransform);
             UI_Inventory.rightClick = false;
         }
+
+        TimerControl();
     }
 }

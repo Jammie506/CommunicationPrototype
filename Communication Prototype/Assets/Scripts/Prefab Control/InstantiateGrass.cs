@@ -10,6 +10,8 @@ public class InstantiateGrass : MonoBehaviour
     public GameObject boulder;
 
     public List<GameObject> grassList = new List<GameObject>();
+    public List<GameObject> treeList = new List<GameObject>();
+    public List<GameObject> boulderList = new List<GameObject>();
 
     public int grassLoops = 15;
     public int treeIterations = 10;
@@ -17,7 +19,7 @@ public class InstantiateGrass : MonoBehaviour
 
     void Start()
     {
-        CreateGrass(grassLoops,15, new Vector3(0f,0.6f,0f),15);
+        CreateGrass(grassLoops,15, new Vector3(0f,0.5f,0f),15);
         CreateTree(treeIterations, 0, new Vector3(0f, 0f, 0f), 35);
         CreateBoulder(boulderIterations, 1, new Vector3(0f, 1f, 0f), 35);
 
@@ -28,14 +30,48 @@ public class InstantiateGrass : MonoBehaviour
     {
         foreach(GameObject g in grassList)
         {
-            Vector3 d = player.transform.position - g.transform.position;
-            if(d.magnitude < 70)
+            if(g != null)
             {
-                g.SetActive(true);
+                Vector3 d = player.transform.position - g.transform.position;
+                if (d.magnitude < 70)
+                {
+                    g.SetActive(true);
+                }
+                else
+                {
+                    g.SetActive(false);
+                }
             }
-            else
+          
+        }
+        foreach (GameObject g in treeList)
+        {
+            if (g != null)
             {
-                g.SetActive(false);
+                Vector3 d = player.transform.position - g.transform.position;
+                if (d.magnitude < 160)
+                {
+                    g.SetActive(true);
+                }
+                else
+                {
+                    g.SetActive(false);
+                }
+            }
+        }
+        foreach (GameObject g in boulderList)
+        {
+            if (g != null)
+            {
+                Vector3 d = player.transform.position - g.transform.position;
+                if (d.magnitude < 160)
+                {
+                    g.SetActive(true);
+                }
+                else
+                {
+                    g.SetActive(false);
+                }
             }
         }
     }
@@ -98,6 +134,7 @@ public class InstantiateGrass : MonoBehaviour
 
                 /* Now spawn */
                 var enemy = Instantiate(tree, spawnPos, tree.transform.rotation) as GameObject;
+                treeList.Add(enemy);
             }
         }
     }
@@ -128,6 +165,7 @@ public class InstantiateGrass : MonoBehaviour
 
                 /* Now spawn */
                 var enemy = Instantiate(boulder, spawnPos, boulder.transform.rotation) as GameObject;
+                boulderList.Add(enemy);
             }
         }
     }

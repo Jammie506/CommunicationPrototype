@@ -90,9 +90,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1378960598441154969}
+  - component: {fileID: 8351117301485609625}
+  - component: {fileID: 9063701959693245714}
   m_Layer: 0
   m_Name: tree
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,9 +106,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758899708218573603}
-  m_LocalRotation: {x: 0, y: 0.56640637, z: 0, w: -0.8241262}
+  m_LocalRotation: {x: 0, y: 0.061048582, z: 0, w: -0.9981348}
   m_LocalPosition: {x: 25.632496, y: 0, z: -17.82491}
-  m_LocalScale: {x: 1.0391846, y: 1.1353673, z: 1.0746642}
+  m_LocalScale: {x: 1.3225577, y: 1.4684683, z: 1.0803492}
   m_Children:
   - {fileID: 2833515998477632252}
   - {fileID: 5061642413608680579}
@@ -119,6 +121,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8351117301485609625
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758899708218573603}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.404247, y: 17.261726, z: 17.53773}
+  m_Center: {x: 2.4730167, y: 5.2540464, z: -0.68665355}
+--- !u!54 &9063701959693245714
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758899708218573603}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &2244437117921332246
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +243,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: aa694d68009efc7438853e23be69f5c0, type: 3}
 --- !u!1 &3194163472608262928

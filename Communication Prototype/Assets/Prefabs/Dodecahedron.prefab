@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4734232558956675840}
   - component: {fileID: 7374547787459033034}
   - component: {fileID: 3552994019520402008}
-  - component: {fileID: 7400699676184920645}
   - component: {fileID: 2534234901715671191}
   - component: {fileID: 48014488175806184}
+  - component: {fileID: 7400699676184920645}
   m_Layer: 0
   m_Name: Dodecahedron
   m_TagString: Untagged
@@ -97,19 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364b4d5ba1a821d4bae38eb4f3cbb870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &7400699676184920645
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9031780298342061599}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1269197, y: 1.1807306, z: 0.9708203}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2534234901715671191
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -138,4 +125,17 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &7400699676184920645
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9031780298342061599}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1269197, y: 1.1807306, z: 0.9708203}
   m_Center: {x: 0, y: 0, z: 0}
