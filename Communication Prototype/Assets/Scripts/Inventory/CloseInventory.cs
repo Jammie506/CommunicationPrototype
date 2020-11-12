@@ -13,7 +13,7 @@ public class CloseInventory : MonoBehaviour
     public GameObject activityObject;
     private ActivityObject playerActivity;
 
-
+    public static bool closeInventory = false;
 
     private void OnEnable()
     {
@@ -31,7 +31,7 @@ public class CloseInventory : MonoBehaviour
     {
         movementScript.speed = ActivityObject.resetSpeed;
         cameraMovement.enabled = true;
-
+        closeInventory = true;
         playerActivity.uiPanel.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
     }

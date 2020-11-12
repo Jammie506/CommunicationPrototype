@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+    public GameObject torchPrefab;
+
     public Transform targetPosition;
 
     Vector3 velocity;
@@ -22,14 +24,17 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private UI_Inventory uiInventory;
 
+    public PlayerMovement player;
+
     private void OnEnable()
     {
-
+        player = this.gameObject.GetComponent<PlayerMovement>();
     }
     private void Awake()
     {
-        inventory = new Inventory();
+        inventory = new Inventory(UseItem);
         uiInventory.SetInventory(inventory);
+        uiInventory.SetPlayer(this);
 
     }
     private void Start()
@@ -38,10 +43,14 @@ public class PlayerMovement : MonoBehaviour
 
 
         //CreateGrass(1, Vector3.zero, 10);
-        ItemWorld.SpawnItemWorld(new Vector3(Random.Range(-15, 15), 0.25f, Random.Range(-16, 16)), new Item { itemType = Item.ItemType.Torch, amount = 1 });
-        ItemWorld.SpawnItemWorld(new Vector3(Random.Range(-15, 15), 0.5f, Random.Range(-16, 16)), new Item { itemType = Item.ItemType.Key, amount = 1 });
-        ItemWorld.SpawnItemWorld(new Vector3(Random.Range(-15, 15), 0.5f, Random.Range(-16, 16)), new Item { itemType = Item.ItemType.Note, amount = 1 });
+      
     }
+
+    public void GetPosition()
+    {
+        Vector3 playerPos = player.transform.position;
+    }
+   
     private void OnTriggerEnter(Collider collision)
     {
         ItemWorld itemWorld = collision.GetComponent<ItemWorld>();
@@ -52,26 +61,32 @@ public class PlayerMovement : MonoBehaviour
             itemWorld.DestroySelf();
         }
     }
-    public void CreateGrass(int num, Vector3 point, int radius)
+    public static int amount = 0;
+    private GameObject objectTransform;
+    private void UseItem(Item item)
     {
-        for (int i = 0; i < num; i++)
+        switch (item.itemType)
         {
-            radius += Random.Range(1, 6);
-           
-
-            /* Distance around the circle */
-            var radians = 2 * Mathf.PI / num * i;
-
-            /* Get the vector direction */
-            var vertical = Mathf.Sin(radians);
-            var horizontal = Mathf.Cos(radians);
-
-            float randomX = Random.Range(-0.2f, 0.2f);
-            float randomY = Random.Range(-0.2f, 0.2f);
-            var spawnDir = new Vector3(horizontal + randomX, 0f, vertical + randomY);
-
-            ItemWorld.SpawnItemWorld(spawnDir, new Item { itemType = Item.ItemType.Torch, amount = 1 });
+            case Item.ItemType.Torch:
+                if(amount < 1)
+                {
+                    objectTransform = Instantiate(ItemAssets.Instance.pfItemWorld[0], targetPosition.position, targetPosition.transform.rotation);
+                    objectTransform.GetComponent<Rigidbody>().useGravity = false;
+                    objectTransform.GetComponent<Rigidbody>().isKinematic = true;
+                    objectTransform.GetComponent<BoxCollider>().isTrigger = false;
+                    objectTransform.transform.parent = targetPosition.transform;
+                    targetPosition.tag = "Torch";
+                    amount++;
+                   
+                }
+                break;
+            case Item.ItemType.Key:
+                Debug.Log("Key");
+                break;
+            case Item.ItemType.Note:
+                break;
         }
+
     }
     void Update()
     {
@@ -98,6 +113,10 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
 
         ItemAssets.Instance.pfItemWorld[0].transform.position = targetPosition.transform.position;
-
+        if (UI_Inventory.rightClick)
+        {
+            Destroy(objectTransform);
+            UI_Inventory.rightClick = false;
+        }
     }
 }

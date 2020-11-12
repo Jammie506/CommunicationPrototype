@@ -37,15 +37,31 @@ public class ActivityObject : MonoBehaviour
     {
         resetSpeed = movementScript.speed;
     }
+    public bool inventoryActive = false;
     void Update()
     {
-
-        if (Input.GetKey(KeyCode.R))
+     
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+            CloseInventory.closeInventory = false;
+                inventoryActive = !inventoryActive;
+            }
+          
+        if (inventoryActive && !CloseInventory.closeInventory)
         {
             movementScript.speed = 0f;
             cameraMovement.enabled = false;
             uiPanel.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
+        }
+        if (!inventoryActive)
+        {
+            {
+                movementScript.speed = ActivityObject.resetSpeed;
+                cameraMovement.enabled = true;
+                uiPanel.SetActive(true);
+                Cursor.lockState = CursorLockMode.Locked;
+            }
         }
     }
 }

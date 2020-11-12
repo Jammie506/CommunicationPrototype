@@ -3,12 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using CodeMonkey.Utils;
+
 public class UI_Inventory : MonoBehaviour
 {
     private Inventory inventory;
     public Transform background;
     public Transform itemSlotContainer;
     public Transform itemSlotTemplate;
+
+    private PlayerMovement player;
 
 
     private void Awake()
@@ -18,7 +22,10 @@ public class UI_Inventory : MonoBehaviour
         itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
 
     }
-
+    public void SetPlayer(PlayerMovement player)
+    {
+        this.player = player;
+    }
     public void SetInventory(Inventory inventory)
     {
         this.inventory = inventory;
@@ -32,11 +39,12 @@ public class UI_Inventory : MonoBehaviour
         RefreshInventoryItems();
     }
 
+    public static bool rightClick = false;
     private void RefreshInventoryItems()
     {
-        foreach(Transform child in itemSlotContainer)
+        foreach (Transform child in itemSlotContainer)
         {
-            if(child == itemSlotTemplate)
+            if (child == itemSlotTemplate)
             {
                 continue;
             }
@@ -49,16 +57,33 @@ public class UI_Inventory : MonoBehaviour
         foreach (Item item in inventory.GetItemList())
         {
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
+            itemSlotRectTransform.gameObject.SetActive(true);
+
+            itemSlotRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
+            {
+                //Use Item
+                inventory.UseItem(item);
+            };
+            itemSlotRectTransform.GetComponent<Button_UI>().MouseRightClickFunc = () =>
+            {
+                //Drop Item
+                inventory.RemoveItem(item);
+                ItemWorld.DropItem(player.targetPosition.transform, item);
+                if(item.itemType == Item.ItemType.Torch)
+                {
+                    rightClick = true;
+                    PlayerMovement.amount = 0;
+                }
+            };
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y);
             Image image = itemSlotRectTransform.Find("Image").GetComponent<Image>();
             image.sprite = item.GetSprite();
-            itemSlotRectTransform.gameObject.SetActive(true);
             x++;
             if (item.itemType == Item.ItemType.Torch)
             {
                 image.tag = "Torch";
             }
-         
+
         }
     }
 }
