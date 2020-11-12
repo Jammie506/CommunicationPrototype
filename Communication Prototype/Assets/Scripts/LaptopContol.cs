@@ -9,12 +9,6 @@ public class LaptopContol : MonoBehaviour
     public Button map;
     public Button decoder;
     public Button clues;
-    public Button clear;
-
-    public Button aButton; public Button cButton; public Button fButton;
-    public Button hButton; public Button iButton; public Button lButton;
-    public Button pButton; public Button rButton; public Button tButton;
-    public Button wButton;
 
     public GameObject alphabetHolder;
 
@@ -25,10 +19,15 @@ public class LaptopContol : MonoBehaviour
     public Text decoderTxt;
 
     
-    public bool a; public bool c; public bool f;
-    public bool h; public bool i; public bool l;
-    public bool p; public bool r; public bool t;
-    public bool w; 
+    public bool a; public bool b; public bool c;
+    public bool d; public bool e; public bool f;
+    public bool g; public bool h; public bool i;
+    public bool j; public bool k; public bool l;
+    public bool m; public bool n; public bool o;
+    public bool p; public bool q; public bool r;
+    public bool s; public bool t; public bool u;
+    public bool v; public bool w; public bool x;
+    public bool y; public bool z;
     
 
     public void Start()
@@ -94,13 +93,29 @@ public class LaptopContol : MonoBehaviour
     {
         a = true;
     }
+    public void BClick()
+    {
+        b = true;
+    }
     public void CClick()
     {
         c = true;
     }
+    public void DClick()
+    {
+        d = true;
+    }
+    public void EClick()
+    {
+        e = true;
+    }
     public void FClick()
     {
         f = true;
+    }
+    public void GClick()
+    {
+        g = true;
     }
     public void HClick()
     {
@@ -110,25 +125,73 @@ public class LaptopContol : MonoBehaviour
     {
         i = true;
     }
+    public void JClick()
+    {
+        j = true;
+    }
+    public void KClick()
+    {
+        k = true;
+    }
     public void LClick()
     {
         l = true;
+    }
+    public void MClick()
+    {
+        m = true;
+    }
+    public void NClick()
+    {
+        n = true;
+    }
+    public void OClick()
+    {
+        o = true;
     }
     public void PClick()
     {
         p = true;
     }
+    public void QClick()
+    {
+        q = true;
+    }
     public void RClick()
     {
         r = true;
+    }
+    public void SClick()
+    {
+        s = true;
     }
     public void TClick()
     {
         t = true;
     }
+    public void UClick()
+    {
+        u = true;
+    }
+    public void VClick()
+    {
+        v = true;
+    }
     public void WClick()
     {
         w = true;
+    }
+    public void XClick()
+    {
+        x = true;
+    }
+    public void YClick()
+    {
+        y = true;
+    }
+    public void ZClick()
+    {
+        z = true;
     }
     
     

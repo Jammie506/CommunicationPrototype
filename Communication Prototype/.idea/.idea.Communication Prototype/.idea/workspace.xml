@@ -21,8 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c3b20a81-87a4-4443-9caf-e1ca1d5e569b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Communication Prototype/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Communication Prototype/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LaptopContol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LaptopContol.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler0.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +95,8 @@
       <workItem from="1604922408427" duration="3920000" />
       <workItem from="1605178860579" duration="85000" />
       <workItem from="1605181022441" duration="3963000" />
+      <workItem from="1605188821367" duration="11000" />
+      <workItem from="1605188837955" duration="602000" />
     </task>
     <servers />
   </component>
