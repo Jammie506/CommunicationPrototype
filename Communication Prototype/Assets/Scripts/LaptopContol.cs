@@ -9,6 +9,12 @@ public class LaptopContol : MonoBehaviour
     public Button map;
     public Button decoder;
     public Button clues;
+    public Button clear;
+
+    public Button aButton; public Button cButton; public Button fButton;
+    public Button hButton; public Button iButton; public Button lButton;
+    public Button pButton; public Button rButton; public Button tButton;
+    public Button wButton;
 
     public GameObject alphabetHolder;
 
@@ -84,7 +90,49 @@ public class LaptopContol : MonoBehaviour
         alphabetHolder.SetActive(false);
     }
 
-    public void Decoder()
+    public void AClick()
+    {
+        a = true;
+    }
+    public void CClick()
+    {
+        c = true;
+    }
+    public void FClick()
+    {
+        f = true;
+    }
+    public void HClick()
+    {
+        h = true;
+    }
+    public void IClick()
+    {
+        i = true;
+    }
+    public void LClick()
+    {
+        l = true;
+    }
+    public void PClick()
+    {
+        p = true;
+    }
+    public void RClick()
+    {
+        r = true;
+    }
+    public void TClick()
+    {
+        t = true;
+    }
+    public void WClick()
+    {
+        w = true;
+    }
+    
+    
+    void Decoder()
     {
         decoderTxt.text = "DECODER";
 
@@ -102,21 +150,13 @@ public class LaptopContol : MonoBehaviour
         {
             decoderTxt.text = "Home as the Crow Flies";
         }
-        
-        
     }
 
     public void Clear()
     {
-        a = false;
-        c = false;
-        f = false;
-        h = false;
-        i = false;
-        l = false;
-        p = false;
-        r = false;
-        t = false;
+        a = false; c = false; f = false;
+        h = false; i = false; l = false;
+        p = false; r = false; t = false;
         w = false;
     }
 }

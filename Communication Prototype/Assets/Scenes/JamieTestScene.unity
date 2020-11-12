@@ -278,7 +278,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8299476}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1268815399}
+        m_TargetAssemblyTypeName: LaptopContol, Assembly-CSharp
+        m_MethodName: Clear
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8299476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,7 +342,7 @@ GameObject:
   - component: {fileID: 11417297}
   - component: {fileID: 11417296}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -545,7 +557,7 @@ GameObject:
   - component: {fileID: 29160524}
   - component: {fileID: 29160523}
   m_Layer: 5
-  m_Name: Button
+  m_Name: A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -613,7 +625,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 29160524}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1268815399}
+        m_TargetAssemblyTypeName: LaptopContol, Assembly-CSharp
+        m_MethodName: AClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &29160524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,7 +689,7 @@ GameObject:
   - component: {fileID: 39547536}
   - component: {fileID: 39547535}
   m_Layer: 5
-  m_Name: Button (8)
+  m_Name: I
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -733,7 +757,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 39547536}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1268815399}
+        m_TargetAssemblyTypeName: LaptopContol, Assembly-CSharp
+        m_MethodName: IClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &39547536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -880,7 +916,7 @@ GameObject:
   - component: {fileID: 123126642}
   - component: {fileID: 123126641}
   m_Layer: 5
-  m_Name: Button (21)
+  m_Name: V
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3030,7 +3066,7 @@ GameObject:
   - component: {fileID: 387289394}
   - component: {fileID: 387289393}
   m_Layer: 5
-  m_Name: Button (9)
+  m_Name: J
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3245,7 +3281,7 @@ GameObject:
   - component: {fileID: 439085044}
   - component: {fileID: 439085043}
   m_Layer: 5
-  m_Name: Button (20)
+  m_Name: U
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4270,7 +4306,7 @@ GameObject:
   - component: {fileID: 592311645}
   - component: {fileID: 592311644}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: E
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5234,7 +5270,7 @@ GameObject:
   - component: {fileID: 763874257}
   - component: {fileID: 763874256}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: F
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5302,7 +5338,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 763874257}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1268815399}
+        m_TargetAssemblyTypeName: LaptopContol, Assembly-CSharp
+        m_MethodName: FClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &763874257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5354,7 +5402,7 @@ GameObject:
   - component: {fileID: 764696283}
   - component: {fileID: 764696282}
   m_Layer: 5
-  m_Name: Button (10)
+  m_Name: K
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5474,7 +5522,7 @@ GameObject:
   - component: {fileID: 766758184}
   - component: {fileID: 766758183}
   m_Layer: 5
-  m_Name: Button (7)
+  m_Name: H
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5542,7 +5590,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 766758184}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1268815399}
+        m_TargetAssemblyTypeName: LaptopContol, Assembly-CSharp
+        m_MethodName: HClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &766758184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5958,7 +6018,7 @@ GameObject:
   - component: {fileID: 921907583}
   - component: {fileID: 921907582}
   m_Layer: 5
-  m_Name: Button (25)
+  m_Name: Z
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6736,7 +6796,7 @@ GameObject:
   - component: {fileID: 1024929731}
   - component: {fileID: 1024929730}
   m_Layer: 5
-  m_Name: Button (22)
+  m_Name: W
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6804,7 +6864,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1024929731}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1268815399}
+        m_TargetAssemblyTypeName: LaptopContol, Assembly-CSharp
+        m_MethodName: WClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1024929731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9128,7 +9200,7 @@ GameObject:
   - component: {fileID: 1254229598}
   - component: {fileID: 1254229597}
   m_Layer: 5
-  m_Name: Button (15)
+  m_Name: P
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9196,7 +9268,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1254229598}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1268815399}
+        m_TargetAssemblyTypeName: LaptopContol, Assembly-CSharp
+        m_MethodName: PClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1254229598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9404,36 +9488,31 @@ MonoBehaviour:
   map: {fileID: 1654736740}
   decoder: {fileID: 1938380125}
   clues: {fileID: 353120891}
+  clear: {fileID: 8299475}
+  aButton: {fileID: 0}
+  cButton: {fileID: 2140817581}
+  fButton: {fileID: 763874256}
+  hButton: {fileID: 766758183}
+  iButton: {fileID: 39547535}
+  lButton: {fileID: 1703556873}
+  pButton: {fileID: 1254229597}
+  rButton: {fileID: 1567226575}
+  tButton: {fileID: 1281131723}
+  wButton: {fileID: 1024929730}
   alphabetHolder: {fileID: 1678875216}
   back: {fileID: 684765298}
   cipher: {fileID: 1521884417}
   decoderTxt: {fileID: 470842383}
   a: 0
-  b: 0
   c: 0
-  d: 0
-  e: 0
   f: 0
-  g: 0
   h: 0
   i: 0
-  j: 0
-  k: 0
   l: 0
-  m: 0
-  n: 0
-  o: 0
   p: 0
-  q: 0
   r: 0
-  s: 0
   t: 0
-  u: 0
-  v: 0
   w: 0
-  x: 0
-  y: 0
-  z: 0
 --- !u!4 &1268815400
 Transform:
   m_ObjectHideFlags: 0
@@ -9556,7 +9635,7 @@ GameObject:
   - component: {fileID: 1281131724}
   - component: {fileID: 1281131723}
   m_Layer: 5
-  m_Name: Button (19)
+  m_Name: T
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9624,7 +9703,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1281131724}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1268815399}
+        m_TargetAssemblyTypeName: LaptopContol, Assembly-CSharp
+        m_MethodName: TClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1281131724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10119,7 +10210,7 @@ GameObject:
   - component: {fileID: 1410524169}
   - component: {fileID: 1410524168}
   m_Layer: 5
-  m_Name: Button (13)
+  m_Name: N
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10714,7 +10805,7 @@ GameObject:
   - component: {fileID: 1493195632}
   - component: {fileID: 1493195631}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11368,7 +11459,7 @@ GameObject:
   - component: {fileID: 1545477385}
   - component: {fileID: 1545477384}
   m_Layer: 5
-  m_Name: Button (24)
+  m_Name: Y
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11488,7 +11579,7 @@ GameObject:
   - component: {fileID: 1567226576}
   - component: {fileID: 1567226575}
   m_Layer: 5
-  m_Name: Button (17)
+  m_Name: R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11556,7 +11647,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1567226576}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1268815399}
+        m_TargetAssemblyTypeName: LaptopContol, Assembly-CSharp
+        m_MethodName: RClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1567226576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11608,7 +11711,7 @@ GameObject:
   - component: {fileID: 1582617958}
   - component: {fileID: 1582617957}
   m_Layer: 5
-  m_Name: Button (14)
+  m_Name: O
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11728,7 +11831,7 @@ GameObject:
   - component: {fileID: 1585817571}
   - component: {fileID: 1585817570}
   m_Layer: 5
-  m_Name: Button (12)
+  m_Name: M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12279,7 +12382,7 @@ GameObject:
   - component: {fileID: 1633888743}
   - component: {fileID: 1633888742}
   m_Layer: 5
-  m_Name: Button (6)
+  m_Name: G
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12825,7 +12928,7 @@ GameObject:
   - component: {fileID: 1703556874}
   - component: {fileID: 1703556873}
   m_Layer: 5
-  m_Name: Button (11)
+  m_Name: L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12893,7 +12996,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1703556874}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1268815399}
+        m_TargetAssemblyTypeName: LaptopContol, Assembly-CSharp
+        m_MethodName: LClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1703556874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13602,7 +13717,7 @@ GameObject:
   - component: {fileID: 1909890325}
   - component: {fileID: 1909890324}
   m_Layer: 5
-  m_Name: Button (18)
+  m_Name: S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13722,7 +13837,7 @@ GameObject:
   - component: {fileID: 1912748673}
   - component: {fileID: 1912748672}
   m_Layer: 5
-  m_Name: Button (23)
+  m_Name: X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14512,7 +14627,7 @@ GameObject:
   - component: {fileID: 2026905808}
   - component: {fileID: 2026905807}
   m_Layer: 5
-  m_Name: Button (16)
+  m_Name: Q
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15245,7 +15360,7 @@ GameObject:
   - component: {fileID: 2140817582}
   - component: {fileID: 2140817581}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15313,7 +15428,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2140817582}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1268815399}
+        m_TargetAssemblyTypeName: LaptopContol, Assembly-CSharp
+        m_MethodName: CClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2140817582
 MonoBehaviour:
   m_ObjectHideFlags: 0
