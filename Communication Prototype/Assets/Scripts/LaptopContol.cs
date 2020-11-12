@@ -6,51 +6,68 @@ using UnityEngine.UI;
 
 public class LaptopContol : MonoBehaviour
 {
-    public Button resources;
     public Button map;
-    public Button messages;
+    public Button decoder;
+    public Button clues;
+
+    public GameObject alphabetHolder;
 
     public Button back;
 
     public Image cipher;
 
+    public Text decoderTxt;
+
+    
+    public bool a; public bool c; public bool f;
+    public bool h; public bool i; public bool l;
+    public bool p; public bool r; public bool t;
+    public bool w; 
+    
+
     public void Start()
     {
-        resources.gameObject.SetActive(true);
         map.gameObject.SetActive(true);
-        messages.gameObject.SetActive(true);
+        decoder.gameObject.SetActive(true);
+        clues.gameObject.SetActive(true);
         
         back.gameObject.SetActive(false);
         
         cipher.gameObject.SetActive(false);
+        
+        alphabetHolder.SetActive(false);
     }
 
-    public void ResourcesClicked()
+    private void Update()
     {
-        resources.gameObject.SetActive(false);
-        map.gameObject.SetActive(false);
-        messages.gameObject.SetActive(false);
-        
-        back.gameObject.SetActive(true);
-        
-        cipher.gameObject.SetActive(true);
+        Decoder();
     }
 
     public void MapClicked()
     {
-        resources.gameObject.SetActive(false);
         map.gameObject.SetActive(false);
-        messages.gameObject.SetActive(false);
+        decoder.gameObject.SetActive(false);
+        clues.gameObject.SetActive(false);
+        
+        back.gameObject.SetActive(true);
+    }
+
+    public void DecoderClicked()
+    {
+        map.gameObject.SetActive(false);
+        decoder.gameObject.SetActive(false);
+        clues.gameObject.SetActive(false);
         
         back.gameObject.SetActive(true);
         
+        alphabetHolder.SetActive(true);
     }
     
-    public void MessagesClicked()
+    public void CluesClicked()
     {
-        resources.gameObject.SetActive(false);
         map.gameObject.SetActive(false);
-        messages.gameObject.SetActive(false);
+        decoder.gameObject.SetActive(false);
+        clues.gameObject.SetActive(false);
         
         back.gameObject.SetActive(true);
         
@@ -58,12 +75,48 @@ public class LaptopContol : MonoBehaviour
 
     public void BackClicked()
     {
-        resources.gameObject.SetActive(true);
         map.gameObject.SetActive(true);
-        messages.gameObject.SetActive(true);
+        decoder.gameObject.SetActive(true);
+        clues.gameObject.SetActive(true);
         
         back.gameObject.SetActive(false);
         
-        cipher.gameObject.SetActive(false);
+        alphabetHolder.SetActive(false);
+    }
+
+    public void Decoder()
+    {
+        decoderTxt.text = "DECODER";
+
+        if (l && f && t && r)
+        {
+            decoderTxt.text = "Look for the Red Tree";
+        }
+
+        if (f && i && t && w && p)
+        {
+            decoderTxt.text = "Free in the Wild Plains";
+        }
+
+        if (h && a && t && c && f)
+        {
+            decoderTxt.text = "Home as the Crow Flies";
+        }
+        
+        
+    }
+
+    public void Clear()
+    {
+        a = false;
+        c = false;
+        f = false;
+        h = false;
+        i = false;
+        l = false;
+        p = false;
+        r = false;
+        t = false;
+        w = false;
     }
 }
