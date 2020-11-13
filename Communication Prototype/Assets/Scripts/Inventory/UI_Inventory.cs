@@ -14,7 +14,7 @@ public class UI_Inventory : MonoBehaviour
 
     private PlayerMovement player;
 
-    public AudioSource dropItem;
+
     private void Awake()
     {
         background = transform.Find("BackGround");
@@ -67,11 +67,6 @@ public class UI_Inventory : MonoBehaviour
             itemSlotRectTransform.GetComponent<Button_UI>().MouseRightClickFunc = () =>
             {
                 //Drop Item
-                dropItem.Play();
-                foreach (GameObject n in player.note)
-                {
-                    n.SetActive(false);
-                }
                 inventory.RemoveItem(item);
                 ItemWorld.DropItem(player.targetPosition.transform, item);
 
@@ -80,7 +75,7 @@ public class UI_Inventory : MonoBehaviour
                 if (ActivateFlame.activateFlame == true)
                 {
                     PlayerMovement.resumeTimer = true;
-                    PlayerMovement.torchIsStillAlive = false;
+                   PlayerMovement.torchIsStillAlive = false;
                 }
                 player.targetPosition.tag = "Untagged";
             };

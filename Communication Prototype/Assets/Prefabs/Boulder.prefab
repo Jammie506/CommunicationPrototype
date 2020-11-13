@@ -28,6 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6793504729147252044}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalRotation: {x: 0, y: 0.9945219, z: 0, w: -0.10452851}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.1673317, y: 1.034343, z: 1.1244502}
@@ -36,6 +37,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.1215023, y: 1.0407187, z: 1.0875075}
 >>>>>>> 1dfeda2a1141000e586dce977169b5b3a11bff27
+=======
+  m_LocalRotation: {x: 0, y: 0.53729963, z: 0, w: -0.8433914}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0939345, y: 1.1661745, z: 1.1384362}
+>>>>>>> parent of 8cf9252... Added new sounds
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

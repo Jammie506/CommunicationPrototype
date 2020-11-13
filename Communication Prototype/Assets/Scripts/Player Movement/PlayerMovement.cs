@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
 
     public PlayerMovement player;
 
-    public AudioSource pickUpItem;
     private void OnEnable()
     {
         player = this.gameObject.GetComponent<PlayerMovement>();
@@ -63,7 +62,6 @@ public class PlayerMovement : MonoBehaviour
         ItemWorld itemWorld = collision.GetComponent<ItemWorld>();
         if (itemWorld != null)
         {
-            pickUpItem.Play();
             //If the colliding object contains Items world script
             if(itemWorld.GetItem().itemType == Item.ItemType.Torch)
             {
