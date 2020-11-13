@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OpenDoor : MonoBehaviour
 {
@@ -49,12 +50,18 @@ public class OpenDoor : MonoBehaviour
             }
         }
     }
+    public Image crankMessage;
     private void OnTriggerEnter(Collider collision)
     {
         collision = collider.GetComponentInChildren<BoxCollider>();
+        crankMessage.enabled = true;
         if (collider.tag == "Crank")
         {
             opening = true;
         }
+    }
+    private void OnTriggerExit(Collider collision)
+    {
+        crankMessage.enabled = false;
     }
 }
