@@ -50,11 +50,13 @@ public class OpenDoor : MonoBehaviour
             }
         }
     }
-    public Image crankMessage;
+    public GameObject crankMessage;
     private void OnTriggerEnter(Collider collision)
     {
         collision = collider.GetComponentInChildren<BoxCollider>();
-        crankMessage.enabled = true;
+     
+            crankMessage.SetActive(true);
+
         if (collider.tag == "Crank")
         {
             opening = true;
@@ -62,6 +64,7 @@ public class OpenDoor : MonoBehaviour
     }
     private void OnTriggerExit(Collider collision)
     {
-        crankMessage.enabled = false;
+      
+            crankMessage.SetActive(false);
     }
 }

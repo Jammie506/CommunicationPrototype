@@ -16,7 +16,8 @@ public class ActivateConsecutiveFlame : MonoBehaviour
     {
         player = FindObjectOfType<PlayerMovement>();
     }
-
+    public AudioSource flame;
+    public int amount = 0;
     private void OnTriggerEnter(Collider collision)
     {
         collision = collider.GetComponentInChildren<BoxCollider>();
@@ -25,6 +26,11 @@ public class ActivateConsecutiveFlame : MonoBehaviour
         {
             if(ActivateFlame.activateFlame)
             {
+                if(amount<1)
+                {
+                    flame.Play();
+                    amount++;
+                }
                 torch = collider.Find("Torch(Clone)");
                 light = torch.Find("Torch Light");
                 firePS = torch.Find("Fire PS");

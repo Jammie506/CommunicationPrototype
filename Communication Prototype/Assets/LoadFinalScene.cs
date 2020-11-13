@@ -18,7 +18,7 @@ public class LoadFinalScene : MonoBehaviour
     {
         fadeImage.enabled = true;
         fadeImage.CrossFadeAlpha(0, 2, false);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4);
         SceneManager.LoadScene(2);
     }
 

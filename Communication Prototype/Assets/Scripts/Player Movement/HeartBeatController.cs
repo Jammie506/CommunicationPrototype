@@ -8,8 +8,8 @@ public class HeartBeatController : MonoBehaviour
     public GameObject mainCampfire;
     public AudioSource heartBeat;
 
-    public float timer = 15;
-    private float swtichTimer;
+    public float timer = 12;
+    private float switchTimer;
     private float resetTimer;
 
     public GameObject[] secondaryCampfires = new GameObject[3];
@@ -29,7 +29,7 @@ public class HeartBeatController : MonoBehaviour
     private void Start()
     {
         resetTimer = timer;
-        swtichTimer = 3f;
+        switchTimer = 0.47f;
         acf1 = secondaryCampfires[0].GetComponent<ActivateConsecutiveFlame>();
         acf2 = secondaryCampfires[1].GetComponent<ActivateConsecutiveFlame>();
         acf3 = secondaryCampfires[2].GetComponent<ActivateConsecutiveFlame>();
@@ -46,7 +46,7 @@ public class HeartBeatController : MonoBehaviour
             if (ActivateFlame.activateFlame == false)
             {
                 timer -= Time.deltaTime;
-                if (timer <= 13)
+                if (timer <= 12)
                 {
                     heartBeatControl(4);
                 }
@@ -60,7 +60,8 @@ public class HeartBeatController : MonoBehaviour
 
     public IEnumerator WaitForSeconds()
     {
-        yield return new WaitForSeconds(5);
+        switchTimer = 10;
+        yield return new WaitForSeconds(2f);
         timer = resetTimer;
             SceneManager.LoadScene(1);
     }
@@ -69,38 +70,38 @@ public class HeartBeatController : MonoBehaviour
         switch (n)
         {
             case 1:
-                swtichTimer -= Time.deltaTime;
-                if (swtichTimer <= 0)
+                switchTimer -= Time.deltaTime;
+                if (switchTimer <= 0)
                 {
                     heartBeat.Play(0);
                 }
                 break;
             case 2:
-                swtichTimer -= Time.deltaTime;
-                if (swtichTimer <= 0)
+                switchTimer -= Time.deltaTime;
+                if (switchTimer <= 0)
                 {
                     heartBeat.Play(0);
-                    swtichTimer = 1.75f;
+                    switchTimer = 1.75f;
                 }
                 break;
             case 3:
-                swtichTimer -= Time.deltaTime;
-                if (swtichTimer <= 0)
+                switchTimer -= Time.deltaTime;
+                if (switchTimer <= 0)
                 {
                     heartBeat.Play(0);
-                    swtichTimer = 0.75f;
+                    switchTimer = 0.75f;
                 }
                 break;
             case 4:
-                swtichTimer -= Time.deltaTime;
-                if (swtichTimer <= 0)
+                switchTimer -= Time.deltaTime;
+                if (switchTimer <= 0)
                 {
                     heartBeat.Play(0);
-                    swtichTimer = 0.47f;
+                    switchTimer = 0.47f;
                 }
                 break;
             default:
-                swtichTimer = 3;
+                switchTimer = 3;
                 return;
         }
     }
