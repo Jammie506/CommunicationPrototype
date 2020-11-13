@@ -80,7 +80,7 @@ public class InstantiateGrass : MonoBehaviour
         for (int i = 0; i < num; i++)
         {
             radius += Random.Range(1,6);
-            num2 += 1;
+            num2 += 0;
             for (int j = 0; j < num2; j ++)
             {
                 /* Distance around the circle */

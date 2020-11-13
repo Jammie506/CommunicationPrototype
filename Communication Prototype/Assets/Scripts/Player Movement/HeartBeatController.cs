@@ -1,89 +1,106 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HeartBeatController : MonoBehaviour
 {
-    public GameObject campFire;
+    public GameObject mainCampfire;
     public AudioSource heartBeat;
 
-    private float timer = 2.75f;
+    public float timer = 15;
+    private float swtichTimer;
     private float resetTimer;
+
+    public GameObject[] secondaryCampfires = new GameObject[3];
 
     private void OnEnable()
     {
         heartBeat.GetComponent<AudioSource>();
     }
+    Vector3 distance;
+    Vector3 distance2;
+    Vector3 distance3;
+    Vector3 distance4;
+
+    public ActivateConsecutiveFlame acf1;
+    public ActivateConsecutiveFlame acf2;
+    public ActivateConsecutiveFlame acf3;
     private void Start()
     {
         resetTimer = timer;
+        swtichTimer = 3f;
+        acf1 = secondaryCampfires[0].GetComponent<ActivateConsecutiveFlame>();
+        acf2 = secondaryCampfires[1].GetComponent<ActivateConsecutiveFlame>();
+        acf3 = secondaryCampfires[2].GetComponent<ActivateConsecutiveFlame>();
     }
-    // Update is called once per frame
     void Update()
     {
-        Vector3 distance = transform.position - campFire.transform.position;
-
-       // Debug.Log( "Distance = " + distance.magnitude);
-        if(distance.magnitude < 40)
+        distance = transform.position - mainCampfire.transform.position;
+        distance2 = transform.position - secondaryCampfires[0].transform.position;
+        distance3 = transform.position - secondaryCampfires[1].transform.position;
+        distance4 = transform.position - secondaryCampfires[2].transform.position;
+        Debug.Log( "Distance = " + distance.magnitude);
+        if (distance.magnitude > 40 && distance2.magnitude > 40 && distance3.magnitude > 40 && distance4.magnitude > 40)
         {
-            timer = resetTimer;
-        }
-        if (distance.magnitude > 40 && distance.magnitude < 55)
-        {
-            heartBeatControl(1);
-        }
-        if (distance.magnitude > 55  && distance.magnitude < 65)
-        {
-            heartBeatControl(2);
-        }
-        if (distance.magnitude > 65 && distance.magnitude < 85)
-        {
-            heartBeatControl(3);
-        }
-        if (distance.magnitude > 85)
-        {
-            heartBeatControl(4);
+            if (ActivateFlame.activateFlame == false)
+            {
+                timer -= Time.deltaTime;
+                if (timer <= 13)
+                {
+                    heartBeatControl(4);
+                }
+                if (timer <= 0)
+                {
+                    StartCoroutine(WaitForSeconds());
+                }
+            }
         }
     }
 
+    public IEnumerator WaitForSeconds()
+    {
+        yield return new WaitForSeconds(5);
+        timer = resetTimer;
+            SceneManager.LoadScene(1);
+    }
     public void heartBeatControl(int n)
     {
         switch (n)
         {
             case 1:
-                timer -= Time.deltaTime;
-                if (timer <= 0)
+                swtichTimer -= Time.deltaTime;
+                if (swtichTimer <= 0)
                 {
                     heartBeat.Play(0);
-                    timer = 2.75f;
                 }
                 break;
             case 2:
-                timer -= Time.deltaTime;
-                if (timer <= 0)
+                swtichTimer -= Time.deltaTime;
+                if (swtichTimer <= 0)
                 {
                     heartBeat.Play(0);
-                    timer = 1.75f;
+                    swtichTimer = 1.75f;
                 }
                 break;
             case 3:
-                timer -= Time.deltaTime;
-                if (timer <= 0)
+                swtichTimer -= Time.deltaTime;
+                if (swtichTimer <= 0)
                 {
                     heartBeat.Play(0);
-                    timer = 0.75f;
+                    swtichTimer = 0.75f;
                 }
                 break;
             case 4:
-                timer -= Time.deltaTime;
-                if (timer <= 0)
+                swtichTimer -= Time.deltaTime;
+                if (swtichTimer <= 0)
                 {
                     heartBeat.Play(0);
-                    timer = 0.47f;
+                    swtichTimer = 0.47f;
                 }
                 break;
             default:
-                timer = 3;
+                swtichTimer = 3;
                 return;
         }
     }

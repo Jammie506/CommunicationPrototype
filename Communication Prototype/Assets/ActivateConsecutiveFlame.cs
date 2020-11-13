@@ -10,6 +10,8 @@ public class ActivateConsecutiveFlame : MonoBehaviour
     public Transform firePS;
 
     public PlayerMovement player;
+
+    public bool fireIsLit;
     private void Start()
     {
         player = FindObjectOfType<PlayerMovement>();
@@ -28,6 +30,18 @@ public class ActivateConsecutiveFlame : MonoBehaviour
                 firePS = torch.Find("Fire PS");
                 firePS.gameObject.SetActive(true);
                 light.gameObject.SetActive(true);
+                PlayerMovement.resumeTimer = true;
+                player.timer = player.resetTime;
+                fireIsLit = true;
+            }
+            if(fireIsLit)
+            {
+                torch = collider.Find("Torch(Clone)");
+                light = torch.Find("Torch Light");
+                firePS = torch.Find("Fire PS");
+                firePS.gameObject.SetActive(true);
+                light.gameObject.SetActive(true);
+                ActivateFlame.activateFlame = true;
                 PlayerMovement.resumeTimer = true;
                 player.timer = player.resetTime;
             }

@@ -16,6 +16,8 @@ TagManager:
   - Grass
   - Tree
   - Boulder
+  - Notes
+  - Crank
   layers:
   - Default
   - TransparentFX

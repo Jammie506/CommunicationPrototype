@@ -12,9 +12,22 @@ public class Item
         Key,
         Note
     }
+    public enum NoteType
+    {
+        noNote,
+        note1,
+        note2,
+        note3,
+        note4,
+        note5,
+        note6,
+        note7
+    }
 
     public ItemType itemType;
     public int amount;
+
+    public NoteType noteType;
 
     public Sprite GetSprite()
     {

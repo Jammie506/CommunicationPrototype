@@ -71,8 +71,12 @@ public class UI_Inventory : MonoBehaviour
                 ItemWorld.DropItem(player.targetPosition.transform, item);
 
                 rightClick = true;
-                PlayerMovement.resumeTimer = true;
-                PlayerMovement.torchIsStillAlive = false;
+                PlayerMovement.resumeTimer = false;
+                if (ActivateFlame.activateFlame == true)
+                {
+                    PlayerMovement.resumeTimer = true;
+                   PlayerMovement.torchIsStillAlive = false;
+                }
                 player.targetPosition.tag = "Untagged";
             };
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y);

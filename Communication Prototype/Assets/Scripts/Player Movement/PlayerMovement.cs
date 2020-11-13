@@ -41,11 +41,15 @@ public class PlayerMovement : MonoBehaviour
     public float timer = 30;
     public float resetTime;
     public static bool resumeTimer;
+
+    public GameObject[] note = new GameObject[7];
+ 
     private void Start()
     {
         ItemAssets.Instance.pfItemWorld[0].GetComponent<BoxCollider>().enabled = true;
 
         resetTime = timer;
+
     }
 
     public void GetPosition()
@@ -59,7 +63,11 @@ public class PlayerMovement : MonoBehaviour
         if (itemWorld != null)
         {
             //If the colliding object contains Items world script
-            resumeTimer = false;
+            if(itemWorld.GetItem().itemType == Item.ItemType.Torch)
+            {
+                resumeTimer = false;
+
+            }
             inventory.AddItem(itemWorld.GetItem());
             itemWorld.DestroySelf();
         }
@@ -95,6 +103,10 @@ public class PlayerMovement : MonoBehaviour
                     flameIsActive = true;
                     
                 }
+                foreach (GameObject n in note)
+                {
+                    n.SetActive(false);
+                }
                 break;
             case Item.ItemType.Key:
                 Debug.Log("Key");
@@ -102,11 +114,19 @@ public class PlayerMovement : MonoBehaviour
                 Destroy(objectTransform);
                 objectTransform = Instantiate(ItemAssets.Instance.pfItemWorld[1], targetPosition.position, targetPosition.transform.rotation);
                 objectTransform.tag = "Untagged";
-                targetPosition.tag = "Untagged";
+                targetPosition.tag = "Crank";
                 objectTransform.GetComponent<Rigidbody>().useGravity = false;
                 objectTransform.GetComponent<Rigidbody>().isKinematic = true;
                 objectTransform.GetComponent<BoxCollider>().isTrigger = false;
                 objectTransform.transform.parent = targetPosition.transform;
+                foreach(GameObject n in note)
+                {
+                    n.SetActive(false);
+                }
+                if (ActivateFlame.activateFlame)
+                {
+                    flameIsActive = true;
+                }
                 break;
             case Item.ItemType.Note:
                 resumeTimer = false;
@@ -118,6 +138,65 @@ public class PlayerMovement : MonoBehaviour
                 objectTransform.GetComponent<Rigidbody>().isKinematic = true;
                 objectTransform.GetComponent<BoxCollider>().isTrigger = false;
                 objectTransform.transform.parent = targetPosition.transform;
+                if (ActivateFlame.activateFlame)
+                {
+                    flameIsActive = true;
+                }
+                switch (item.noteType)
+                {
+                    case Item.NoteType.noNote:
+                        return;
+                    case Item.NoteType.note1:
+                        foreach (GameObject n in note)
+                        {
+                            n.SetActive(false);
+                        }
+                        note[0].SetActive(true);
+                        break;
+                    case Item.NoteType.note2:
+                        foreach (GameObject n in note)
+                        {
+                            n.SetActive(false);
+                        }
+                        note[1].SetActive(true);
+                        break;
+                    case Item.NoteType.note3:
+                        foreach (GameObject n in note)
+                        {
+                            n.SetActive(false);
+                        }
+                        note[2].SetActive(true);
+                        break;
+                    case Item.NoteType.note4:
+                        foreach (GameObject n in note)
+                        {
+                            n.SetActive(false);
+                        }
+                        note[3].SetActive(true);
+                        break;
+                    case Item.NoteType.note5:
+                        foreach (GameObject n in note)
+                        {
+                            n.SetActive(false);
+                        }
+                        note[4].SetActive(true);
+                        break;
+                    case Item.NoteType.note6:
+                        foreach (GameObject n in note)
+                        {
+                            n.SetActive(false);
+                        }
+                        note[5].SetActive(true);
+                        break;
+                    case Item.NoteType.note7:
+                        foreach (GameObject n in note)
+                        {
+                            n.SetActive(false);
+                        }
+                        note[6].SetActive(true);
+                        break;
+
+                }
                 break;
         }
 
@@ -130,11 +209,14 @@ public class PlayerMovement : MonoBehaviour
             timer -= Time.deltaTime;
             if(timer <= 0)
             {
-                if(torchIsStillAlive)
+                if(ActivateFlame.activateFlame)
                 {
-                    light.gameObject.SetActive(false);
-                    firePS.gameObject.SetActive(false);
-                    flameIsActive = false;
+                    if(light != null && firePS != null)
+                    {
+                        light.gameObject.SetActive(false);
+                        firePS.gameObject.SetActive(false);
+                        flameIsActive = false;
+                    }
                 }
 
                 resumeTimer = false;

@@ -16,7 +16,6 @@ public class ActivityObject : MonoBehaviour
 
     private GameObject ground;
     public Image lantern;
-    private DragDrop dragDrop;
     public GameObject uiPanel;
 
 
@@ -29,7 +28,6 @@ public class ActivityObject : MonoBehaviour
         cameraMovement = playerCamera.GetComponent<MouseLook>();
 
         boxCollider = player.GetComponent<BoxCollider>();
-        dragDrop = lantern.GetComponent<DragDrop>();
         ground = GameObject.FindGameObjectWithTag("Ground");
 
     }
